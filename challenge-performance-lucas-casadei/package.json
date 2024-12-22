@@ -1,0 +1,21 @@
+{
+  "name": "challenge-performance-lucas-casadei",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "test:50TPS": "npm run build && k6 run --out json=reports/report_50TPS.json dist/scripts/addProduct_50TPS.js && k6-html-reporter --input reports/report_50TPS.json --output reports/report_50TPS.html",
+    "test:100TPS": "npm run build && k6 run --out json=reports/report_100TPS.json dist/scripts/addProduct_100TPS.js && k6-html-reporter --input reports/report_100TPS.json --output reports/report_100TPS.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/k6": "^0.54.2",
+    "k6": "^0.0.0",
+    "k6-html-reporter": "^1.0.5",
+    "typescript": "^5.7.2"
+  }
+}

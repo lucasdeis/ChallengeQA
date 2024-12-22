@@ -1,0 +1,30 @@
+{
+  "name": "challenge-automation-lucas-casadei",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "test": "npm run build && playwright test",
+    "test:api": "npm run build && playwright test --project='API Tests'",
+    "test:web": "npm run build && playwright test --project='Web Tests'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@playwright/test": "^1.49.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
+    "playwright": "^1.49.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.4",
+    "axios": "^1.7.9",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
